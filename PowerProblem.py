@@ -1,23 +1,17 @@
 import random
 
+def fast_pow(x, n):
+    result = 1
+    base = x
+    while n > 0:
+        if n % 2 == 1:
+            result *= base
+        base *= base
+        n //= 2
+    return result
 
-def MyPow(x, n):
-    if n == 0:
-        return 1
-    if n == 1:
-        return x
-    if n == 2:
-        return x * x
-    if n % 2 == 0:
-        return MyPow(MyPow(x, n / 2), 2)
-    if n % 2 == 1:
-        return MyPow(MyPow(x, n / 2), 2) * x
-
-
-print "Now Displaying PowerProblem."
-x = random.randint(4, 999)
-n = random.randint(3, 40)
-print x, " powers ", n
-# x = 1
-# n = 2
-print MyPow(x, n), " comparing to build_in function: ", pow(x, n)
+if __name__ == "__main__":
+    print("Now displaying PowerProblem.")
+    x = random.randint(4, 999)
+    n = random.randint(3, 40)
+    print(f"{x} to the power {n} is: {fast_pow(x, n)}, comparing to built-in: {pow(x, n)}")

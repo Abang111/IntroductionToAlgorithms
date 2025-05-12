@@ -1,35 +1,22 @@
-import random
-
-
 class Stack:
     def __init__(self):
-        self.top = -1
-        self.s = 100
-        self.S = [0 for i in range(0, self.s)]
+        self.stack = []
 
-    def StackEmpty(self):
-        if self.top == -1:
-            return True
-        return False
+    def is_empty(self):
+        return len(self.stack) == 0
 
-    def Push(self, x):
-        if self.top == self.s - 1:
-            return False
-        self.top += 1
-        self.S[self.top] = x
-        return True
+    def push(self, item):
+        self.stack.append(item)
 
-    def Pop(self):
-        if self.StackEmpty():
-            return False
-        else:
-            self.top -= 1
-            return self.S[self.top + 1]
+    def pop(self):
+        if self.is_empty():
+            return None
+        return self.stack.pop()
 
-
-S = Stack()
-for i in range(0, 120):
-    S.Push(random.randint(0,999))
-
-while not S.StackEmpty():
-    print S.Pop()
+if __name__ == "__main__":
+    import random
+    s = Stack()
+    for _ in range(20):
+        s.push(random.randint(0, 999))
+    while not s.is_empty():
+        print(s.pop())

@@ -1,43 +1,42 @@
 import random
 
+def merge_sort(A):
+    def merge_sort_recursive(A, p, r):
+        if p < r:
+            q = (p + r) // 2
+            merge_sort_recursive(A, p, q)
+            merge_sort_recursive(A, q + 1, r)
+            merge(A, p, q, r)
 
-def MergeSort(A, p, r):
-    q = (p + r) / 2  # Find the middle
-    if p < r:
-        MergeSort(A, p, q)  # MergeSort A[p...q]
-        MergeSort(A, q + 1, r)  # MergeSort A[p+1....r]
-    return Merge(A, p, q, r)
+    def merge(A, p, q, r):
+        L = A[p:q+1]
+        R = A[q+1:r+1]
+        i = j = 0
+        k = p
 
+        while i < len(L) and j < len(R):
+            if L[i] <= R[j]:
+                A[k] = L[i]
+                i += 1
+            else:
+                A[k] = R[j]
+                j += 1
+            k += 1
 
-# The guard in Merge()
-MAX = 10000
-
-
-def Merge(A, p, q, r):
-    L = []
-    R = []
-    for i in range(p, q + 1):  # Copy the left side.
-        L.append(A[i])
-    for i in range(q + 1, r + 1):  # Copy the right side.
-        R.append(A[i])
-    L.append(MAX)  # Add guard to the end.
-    R.append(MAX)  # Add guard to the end.
-    i = 0
-    j = 0
-    for k in range(p, r + 1):
-        if L[i] < R[j]:
+        while i < len(L):
             A[k] = L[i]
-            i = i + 1
-        else:
+            i += 1
+            k += 1
+        while j < len(R):
             A[k] = R[j]
-            j = j + 1
-    return A
+            j += 1
+            k += 1
 
+    merge_sort_recursive(A, 0, len(A) - 1)
 
-print "Now displaying MergeSort"
-A = []
-s = random.randint(5, 100)
-for i in range(0, s):
-    A.append(random.randint(0, 1000))
-print A
-print MergeSort(A, 0, len(A) - 1)
+if __name__ == "__main__":
+    print("Now displaying MergeSort")
+    A = [random.randint(0, 1000) for _ in range(random.randint(5, 100))]
+    print("Before:", A)
+    merge_sort(A)
+    print("After:", A)

@@ -1,31 +1,32 @@
 import random
 
+class OpenAddressingHash:
+    def __init__(self, size):
+        self.size = size
+        self.table = [-1] * size
 
-def HashInsert(e, T, s):
-    for i in range(0, s):
-        if T[(e + i) % s] == -1:
-            T[(e + i) % s] = e
-            return True
-    return False
+    def insert(self, key):
+        for i in range(self.size):
+            idx = (key + i) % self.size
+            if self.table[idx] == -1:
+                self.table[idx] = key
+                return True
+        return False
 
+    def search(self, key):
+        for i in range(self.size):
+            idx = (key + i) % self.size
+            if self.table[idx] == key:
+                return idx
+        return -1
 
-def HashSearch(e, T, s):
-    for i in range(0, s):
-        if T[(e + i) % s] == e:
-            return (e + i) % s
-    return False
-
-
-print "Now displaying Open Addressing Hash."
-s = 13
-A = []
-T = [-1 for i in range(0, s)]
-t = random.randint(5, 100)
-for i in range(0, t):
-    A.append(random.randint(0, 1000))
-for e in A:
-    HashInsert(e, T, s)
-print T
-e = random.choice(A)
-i = HashSearch(e, T, s)
-print "The selected elem ", e, " is in Slot:", i
+if __name__ == "__main__":
+    print("Now displaying Open Addressing Hash.")
+    size = 13
+    oah = OpenAddressingHash(size)
+    A = [random.randint(0, 1000) for _ in range(random.randint(5, 20))]
+    for e in A:
+        oah.insert(e)
+    print("Hash table:", oah.table)
+    e = random.choice(A)
+    print(f"The selected element {e} is in slot:", oah.search(e))
