@@ -1,5 +1,42 @@
 # Changelog
 
+## [1.0.1] - 2025-05-06
+
+### Changed
+
+#### HeapSort.py
+- Replaced Python 2-style division `/` with integer division `//` for index calculation.
+- Converted reverse loop slicing to `range(..., ..., -1)` for clarity and efficiency.
+- Updated `heap_sort()` to return a copy of the array, preserving the original.
+- Improved variable names and added inline documentation for heap operations.
+
+#### InsertionSort.py
+- Renamed `InsertionSort` to `insertion_sort` to follow PEP8 naming conventions.
+- Replaced `print` statements with Python 3-compatible `print()` functions.
+- Sorting logic updated to avoid in-place mutation by returning a new list.
+- Enhanced readability with concise inline comments.
+
+#### JumpList.py
+- Renamed classes: `List` → `LevelList`, `JList` → `SkipList` to avoid naming conflicts and improve clarity.
+- Refactored multi-level node insertion into a helper method `_insert_down`.
+- Added boolean return value to deletion method for clearer success indication.
+- Strengthened `down` pointer logic to ensure correct multi-level linking.
+
+#### FibonacciNumber.py
+- Renamed functions using snake_case: `naive_fibonacci`, `linear_fibonacci`, `logarithmic_fibonacci`.
+- Used integer division `//` to fix potential indexing issues in matrix exponentiation.
+- Added explicit handling for edge cases like `n=0` for numerical stability.
+- Organized and preserved all three implementations for comparison and benchmarking.
+
+#### Graph_BFS&DFS.py
+- Renamed methods and variables (e.g., `AddVertex`, `BDFS`) to comply with PEP8 standards.
+- Unified BFS and DFS traversal into a single method `bdfs(mode="BFS" | "DFS")`.
+- Replaced nested loop duplication checks with a `visited` set to improve performance.
+- Ensured topological safety by creating leaf nodes before referencing them as neighbors.
+- Standardized output formatting with Python 3 `print()` and structured debug information.
+
+
+------------------------------------------
 
 ## [1.0.0] - 2025-05-05
 
