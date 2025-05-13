@@ -1,6 +1,80 @@
 # Changelog
 
 
+## [1.0.2] - 2025-05-07
+
+### Changed
+
+#### MiddleSelect.py
+- Added randomized quicksort and deterministic median-of-medians selection (`middle_select`) for order statistics.
+- Improved robustness of recursive select logic with explicit count handling.
+- Wrapped logic in `__main__` guard for standalone execution and testing.
+
+#### OpenAddressingHash.py
+- Implemented open addressing hash table with linear probing.
+- Added fallback check for insertion failure if table is full.
+- Ensured slot wrapping with modulo arithmetic.
+- Output table and probe location in Python 3 format.
+
+#### PowerProblem.py
+- Implemented fast exponentiation using binary decomposition (`fast_pow`).
+- Used integer division to avoid float errors in loop.
+- Compared result against Python built-in `pow()` to validate correctness.
+- Output structure formatted with f-strings.
+
+#### LongestCommonSubsequence.py
+- Refactored LCS into two functions: `lcs()` and helper `lcs_string()`.
+- Introduced direction table (`trace`) for clean backtracking.
+- Renamed variables and methods to PEP8-compliant styles.
+- Prevented `None`-type string concatenation by using explicit empty string returns.
+
+#### MergeSort.py
+- Implemented top-down recursive merge sort with in-place merging.
+- Refined `merge()` logic with clear indexing and merge boundaries.
+- Ensured sort modifies list in-place, with structured test case.
+- Guarded logic with `__main__` block for standalone execution.
+
+
+------------------------------------------------------
+
+## [1.0.1] - 2025-05-06
+
+### Changed
+
+#### HeapSort.py
+- Replaced Python 2-style division `/` with integer division `//` for index calculation.
+- Converted reverse loop slicing to `range(..., ..., -1)` for clarity and efficiency.
+- Updated `heap_sort()` to return a copy of the array, preserving the original.
+- Improved variable names and added inline documentation for heap operations.
+
+#### InsertionSort.py
+- Renamed `InsertionSort` to `insertion_sort` to follow PEP8 naming conventions.
+- Replaced `print` statements with Python 3-compatible `print()` functions.
+- Sorting logic updated to avoid in-place mutation by returning a new list.
+- Enhanced readability with concise inline comments.
+
+#### JumpList.py
+- Renamed classes: `List` → `LevelList`, `JList` → `SkipList` to avoid naming conflicts and improve clarity.
+- Refactored multi-level node insertion into a helper method `_insert_down`.
+- Added boolean return value to deletion method for clearer success indication.
+- Strengthened `down` pointer logic to ensure correct multi-level linking.
+
+#### FibonacciNumber.py
+- Renamed functions using snake_case: `naive_fibonacci`, `linear_fibonacci`, `logarithmic_fibonacci`.
+- Used integer division `//` to fix potential indexing issues in matrix exponentiation.
+- Added explicit handling for edge cases like `n=0` for numerical stability.
+- Organized and preserved all three implementations for comparison and benchmarking.
+
+#### Graph_BFS&DFS.py
+- Renamed methods and variables (e.g., `AddVertex`, `BDFS`) to comply with PEP8 standards.
+- Unified BFS and DFS traversal into a single method `bdfs(mode="BFS" | "DFS")`.
+- Replaced nested loop duplication checks with a `visited` set to improve performance.
+- Ensured topological safety by creating leaf nodes before referencing them as neighbors.
+- Standardized output formatting with Python 3 `print()` and structured debug information.
+
+
+------------------------------------------
+
 ## [1.0.0] - 2025-05-05
 
 ### Added
