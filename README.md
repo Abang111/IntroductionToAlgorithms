@@ -1,36 +1,53 @@
-<p align="right">
-  <a href="README.md"><strong>🇨🇳 中文</strong></a> |
-  <a href="README_EN.md"><strong>🇺🇸 English</strong></a>
+<p align="center">
+  <a href="README_CN.md"><strong>🇨🇳 中文</strong></a> |
+  <a href="README.md"><strong>🇺🇸 English</strong></a>
 </p>
 
 
-# 简介
-这是我阅读《算法导论》时候实现的部分算法。
-# 已实现算法
+# Introduction
 
-  1. 插入排序
-  2. 归并排序
-  3. 二分查找
-  4. 快速阶乘
-  5. 斐波那契数列（包括原始算法、线性算法、递归矩阵算法）
-  6. Strassen算法
-  7. 堆排序
-  8. 基数排序
-  9. 中分查找
-  10. 链表哈希算法
-  11. 开放地址哈希算法
-  12. 随机化查找
-  13. 随机化快速排序
-  14. 二分查找树
-  15. 红黑树
-  16. 栈
-  17. 双向链表
-  18. 循环队列
-  19. 最长子字符串问题
-  20. 图的广度/深度优先搜索
-  21. 单源最短路径Dijkstra算法
-  22. 跳跃表
+This repository contains my implementations of selected algorithms while studying *Introduction to Algorithms*.
 
-# 相关资源
+# Implemented Algorithms
+
+1. Insertion Sort  
+2. Merge Sort  
+3. Binary Search  
+4. Fast Exponentiation  
+5. Fibonacci Sequence (Naive, Linear, and Matrix Recursion)  
+6. Strassen's Matrix Multiplication  
+7. Heap Sort  
+8. Radix Sort  
+9. Median Selection (Deterministic Select)  
+10. Hashing with Chaining  
+11. Open Addressing Hashing  
+12. Randomized Selection  
+13. Randomized QuickSort  
+14. Binary Search Tree  
+15. Red-Black Tree  
+16. Stack  
+17. Doubly Linked List  
+18. Circular Queue  
+19. Longest Common Subsequence (LCS)  
+20. Breadth-First and Depth-First Search on Graphs  
+21. Dijkstra’s Algorithm for Single-Source Shortest Path  
+22. Skip List  
+
+
+----------------------------------------------------
+## 📋 Changelog
+
+For full details, see [CHANGELOG.md](CHANGELOG.md)
+
+
+
+
+# Resources
+
+[Quick Guide to *Introduction to Algorithms*: How I Got Started in 10 Days (in Chinese)](https://zhuanlan.zhihu.com/p/24798324)
+
 
 [《算法导论》快速指南：我是如何10天入门算法导论的。](https://zhuanlan.zhihu.com/p/24798324)
+
+
+

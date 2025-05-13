@@ -1,5 +1,97 @@
 # Changelog
 
+
+## [1.0.4] - 2025-05-09
+
+### Changed
+
+#### StrasssenAlgorithm.py
+- Implemented Strassen's matrix multiplication algorithm for square matrices.
+- Fixed incorrect use of division `/` by replacing with integer division `//` in `Split()` and `Merge()`.
+- Included base case optimization for 2x2 matrices with direct computation of M1–M7.
+- Added fallback `MatrixMultiply()` comparison for verification.
+- Output uses Python 2 `print` syntax and may require update for Python 3 compatibility.
+
+#### RedBlackTree.py
+- Implemented red-black tree with full rotation and insertion fix-up logic.
+- Used a sentinel `NIL` node to simplify leaf handling and balance checks.
+- Added `inorder()` method to visualize the tree structure with color information.
+- Used f-strings for modern Python output formatting.
+
+#### Stack.py
+- Created basic `Stack` class using list with `push`, `pop`, and `is_empty` methods.
+- Added `None` return on underflow for robustness.
+- Demonstrated usage with random values and sequential popping.
+
+
+-----------------------------------------------------------
+
+## [1.0.3] - 2025-05-08
+
+### Changed
+
+#### RadixSort.py
+- Implemented LSD radix sort for non-negative integers using digit-wise bucket grouping.
+- Ensured stability by using ordered bucket merging at each digit level.
+- Wrapped logic in `__main__` guard and added formatted before/after output.
+
+#### RandomizedSelect.py
+- Added randomized selection algorithm for the i-th smallest element.
+- Refactored partition logic into `randomized_partition()` with random pivot swapping.
+- Ensured correctness by validating result against sorted list index.
+- Formatted test outputs using Python 3 f-strings.
+
+#### Queue.py
+- Implemented fixed-size circular queue with head/tail pointer logic.
+- Added `is_empty()` and `is_full()` checks to prevent overflow/underflow.
+- Queue capacity constrained to `size - 1` to distinguish full from empty state.
+- Demonstrated usage via sequential enqueue and dequeue in test block.
+
+#### QuickSort.py
+- Developed randomized quicksort using in-place Lomuto partition scheme.
+- Added random pivot selection to reduce worst-case performance risk.
+- Output formatted using Python 3 `print()` calls with sample test data.
+- Guarded execution with `__main__` block for test isolation.
+
+
+----------------------------------------------
+
+## [1.0.2] - 2025-05-07
+
+### Changed
+
+#### MiddleSelect.py
+- Added randomized quicksort and deterministic median-of-medians selection (`middle_select`) for order statistics.
+- Improved robustness of recursive select logic with explicit count handling.
+- Wrapped logic in `__main__` guard for standalone execution and testing.
+
+#### OpenAddressingHash.py
+- Implemented open addressing hash table with linear probing.
+- Added fallback check for insertion failure if table is full.
+- Ensured slot wrapping with modulo arithmetic.
+- Output table and probe location in Python 3 format.
+
+#### PowerProblem.py
+- Implemented fast exponentiation using binary decomposition (`fast_pow`).
+- Used integer division to avoid float errors in loop.
+- Compared result against Python built-in `pow()` to validate correctness.
+- Output structure formatted with f-strings.
+
+#### LongestCommonSubsequence.py
+- Refactored LCS into two functions: `lcs()` and helper `lcs_string()`.
+- Introduced direction table (`trace`) for clean backtracking.
+- Renamed variables and methods to PEP8-compliant styles.
+- Prevented `None`-type string concatenation by using explicit empty string returns.
+
+#### MergeSort.py
+- Implemented top-down recursive merge sort with in-place merging.
+- Refined `merge()` logic with clear indexing and merge boundaries.
+- Ensured sort modifies list in-place, with structured test case.
+- Guarded logic with `__main__` block for standalone execution.
+
+
+------------------------------------------------------
+
 ## [1.0.1] - 2025-05-06
 
 ### Changed
