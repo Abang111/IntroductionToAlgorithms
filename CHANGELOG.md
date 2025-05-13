@@ -1,6 +1,31 @@
 # Changelog
 
 
+## [1.0.4] - 2025-05-09
+
+### Changed
+
+#### StrasssenAlgorithm.py
+- Implemented Strassen's matrix multiplication algorithm for square matrices.
+- Fixed incorrect use of division `/` by replacing with integer division `//` in `Split()` and `Merge()`.
+- Included base case optimization for 2x2 matrices with direct computation of M1–M7.
+- Added fallback `MatrixMultiply()` comparison for verification.
+- Output uses Python 2 `print` syntax and may require update for Python 3 compatibility.
+
+#### RedBlackTree.py
+- Implemented red-black tree with full rotation and insertion fix-up logic.
+- Used a sentinel `NIL` node to simplify leaf handling and balance checks.
+- Added `inorder()` method to visualize the tree structure with color information.
+- Used f-strings for modern Python output formatting.
+
+#### Stack.py
+- Created basic `Stack` class using list with `push`, `pop`, and `is_empty` methods.
+- Added `None` return on underflow for robustness.
+- Demonstrated usage with random values and sequential popping.
+
+
+-----------------------------------------------------------
+
 ## [1.0.3] - 2025-05-08
 
 ### Changed
