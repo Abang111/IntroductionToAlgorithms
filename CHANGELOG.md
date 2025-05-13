@@ -1,6 +1,36 @@
 # Changelog
 
 
+## [1.0.3] - 2025-05-08
+
+### Changed
+
+#### RadixSort.py
+- Implemented LSD radix sort for non-negative integers using digit-wise bucket grouping.
+- Ensured stability by using ordered bucket merging at each digit level.
+- Wrapped logic in `__main__` guard and added formatted before/after output.
+
+#### RandomizedSelect.py
+- Added randomized selection algorithm for the i-th smallest element.
+- Refactored partition logic into `randomized_partition()` with random pivot swapping.
+- Ensured correctness by validating result against sorted list index.
+- Formatted test outputs using Python 3 f-strings.
+
+#### Queue.py
+- Implemented fixed-size circular queue with head/tail pointer logic.
+- Added `is_empty()` and `is_full()` checks to prevent overflow/underflow.
+- Queue capacity constrained to `size - 1` to distinguish full from empty state.
+- Demonstrated usage via sequential enqueue and dequeue in test block.
+
+#### QuickSort.py
+- Developed randomized quicksort using in-place Lomuto partition scheme.
+- Added random pivot selection to reduce worst-case performance risk.
+- Output formatted using Python 3 `print()` calls with sample test data.
+- Guarded execution with `__main__` block for test isolation.
+
+
+----------------------------------------------
+
 ## [1.0.2] - 2025-05-07
 
 ### Changed
